@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e0e10" />
+    <meta name="description" content="SeefStore — sportswear and casual wear made to move." />
+    <title>Shipping &amp; exchanges — SeefStore</title>
+    <script>
+      try {
+        var lang = localStorage.getItem('lang') || (navigator.language || '').slice(0, 2);
+        if (lang === 'ar') { document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl'; }
+      } catch (e) {}
+    </script>
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <header class="nav" id="site-header"></header>
+
+    <main class="section page policy">
+      <h1 data-i18n="nav.shipping">Shipping &amp; exchanges</h1>
+      <p class="lead" data-i18n="shipping.intro"></p>
+
+      <!-- Texts with numbers (prices, days) are filled in by src/shipping.js from src/policy.js -->
+      <section>
+        <h2 data-i18n="shipping.delivery.title"></h2>
+        <p data-i18n="shipping.delivery.body"></p>
+        <ul>
+          <li data-i18n="shipping.delivery.cairo"></li>
+          <li data-i18n="shipping.delivery.other"></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 data-i18n="shipping.cost.title"></h2>
+        <ul>
+          <li id="cost-fee"></li>
+          <li id="cost-free"></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 data-i18n="shipping.pay.title"></h2>
+        <p data-i18n="shipping.pay.body"></p>
+      </section>
+
+      <section>
+        <h2 data-i18n="shipping.exchange.title"></h2>
+        <ul>
+          <li id="exchange-window"></li>
+          <li data-i18n="shipping.exchange.cond"></li>
+          <li data-i18n="shipping.exchange.cost"></li>
+          <li data-i18n="shipping.exchange.noRefund"></li>
+        </ul>
+        <p data-i18n="shipping.exchange.how"></p>
+        <a class="btn btn-whatsapp" data-wa href="#" target="_blank" rel="noopener" data-i18n="contact.button"></a>
+      </section>
+    </main>
+
+    <footer class="footer" id="site-footer"></footer>
+    <script type="module" src="/src/shipping.js"></script>
+  </body>
+</html>

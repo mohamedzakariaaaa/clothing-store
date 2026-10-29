@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e0e10" />
+    <meta name="robots" content="noindex" />
+    <title>لوحة التحكم — SeefStore</title>
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <p class="demo-banner" id="demo-banner">وضع تجريبي — التعديلات بتتمسح لما تقفل الصفحة لحد ما نوصّل قاعدة البيانات</p>
+
+    <!-- Login -->
+    <section class="login" id="login">
+      <form class="login-card" id="login-form">
+        <img src="/images/logo.webp" alt="SeefStore" width="151" height="128" />
+        <h1>لوحة التحكم</h1>
+        <label>الإيميل<input type="email" name="email" required autocomplete="username" /></label>
+        <label>كلمة السر<input type="password" name="password" required autocomplete="current-password" /></label>
+        <p class="error" id="login-error" role="alert"></p>
+        <button class="btn btn-primary" type="submit">دخول</button>
+        <p class="hint" id="login-hint">في الوضع التجريبي أي إيميل وكلمة سر بيدخلوا.</p>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="app" id="app" hidden>
+      <header class="topbar">
+        <img src="/images/logo.webp" alt="SeefStore" width="151" height="128" />
+        <span class="topbar-title">لوحة التحكم</span>
+        <a class="link" href="/" target="_blank" rel="noopener">شوف الموقع</a>
+        <button class="link" id="logout" type="button">خروج</button>
+      </header>
+
+      <div class="toolbar">
+        <h2>المنتجات <span id="count" class="muted"></span></h2>
+        <input id="search" type="search" placeholder="دوّر على منتج…" aria-label="بحث" />
+        <button class="btn btn-primary" id="add" type="button">+ منتج جديد</button>
+      </div>
+
+      <div class="products" id="products"></div>
+      <p class="empty" id="empty" hidden>مفيش منتجات. دوس "منتج جديد" وابدأ.</p>
+    </section>
+
+    <!-- Add / edit product -->
+    <dialog id="editor">
+      <form id="editor-form" method="dialog">
+        <header class="editor-head">
+          <h2 id="editor-title">منتج جديد</h2>
+          <button class="icon-btn" type="button" id="close" aria-label="إغلاق">✕</button>
+        </header>
+
+        <div class="editor-body">
+          <fieldset class="photos">
+            <legend>الصور <span class="muted">— أول صورة هي الرئيسية، دوس على أي صورة تخليها رئيسية</span></legend>
+            <div class="thumbs" id="thumbs"></div>
+            <label class="upload">
+              + إضافة صور
+              <input type="file" id="files" accept="image/*" multiple hidden />
+            </label>
+            <p class="hint" id="upload-status"></p>
+          </fieldset>
+
+          <label>اسم المنتج<input name="name" required maxlength="80" /></label>
+
+          <div class="row">
+            <label>السعر (جنيه)<input name="price" type="number" min="0" step="5" required inputmode="numeric" /></label>
+            <label>النوع
+              <select name="category">
+                <option value="hoodies">هوديز</option>
+                <option value="jackets">جواكت</option>
+                <option value="tshirts">تيشرتات</option>
+                <option value="pants">بناطيل</option>
+                <option value="shorts">شورتات</option>
+                <option value="other">حاجات تانية</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>المقاسات المتاحة</legend>
+            <div class="chips" id="sizes"></div>
+          </fieldset>
+
+          <label>الألوان <span class="muted">(افصل بينهم بفاصلة)</span><input name="colors" placeholder="أسود، كحلي، أبيض" /></label>
+          <label>الوصف<textarea name="description" rows="3" placeholder="الخامة، القَصّة، أي تفاصيل"></textarea></label>
+
+          <label class="switch"><input type="checkbox" name="inStock" checked /> متوفر في المخزن</label>
+        </div>
+
+        <footer class="editor-foot">
+          <button class="btn btn-ghost danger" type="button" id="delete">مسح المنتج</button>
+          <button class="btn btn-primary" type="submit" id="save">حفظ</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script type="module" src="/src/admin.js"></script>
+  </body>
+</html>
