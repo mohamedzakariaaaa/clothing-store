@@ -70,10 +70,10 @@ const supabaseStore = {
 
 const demoStore = {
   products: [
-    { id: 1, name: 'Navy Wave Jacket', price: 1450, category: 'jackets', sizes: ['M', 'L', 'XL'], colors: ['كحلي', 'أبيض'], description: '', inStock: true, images: ['/images/products/navy-jacket.webp'] },
-    { id: 2, name: 'Retro Track Jacket', price: 1250, category: 'jackets', sizes: ['S', 'M', 'L'], colors: ['أوف وايت', 'أزرق'], description: '', inStock: true, images: ['/images/products/track-jacket.webp'] },
-    { id: 3, name: 'Wave Parachute Pants', price: 1650, category: 'pants', sizes: ['M', 'L'], colors: ['أبيض', 'أزرق'], description: '', inStock: false, images: ['/images/products/wave-pants.webp'] },
-    { id: 4, name: 'Court Shorts', price: 520, category: 'shorts', sizes: ['M', 'L', 'XL', 'XXL'], colors: ['زيتي'], description: '', inStock: true, images: ['/images/products/court-shorts.webp'] },
+    { id: 1, name: 'Navy Wave Jacket', price: 1450, category: 'jackets', sizes: ['M', 'L', 'XL'], colors: ['كحلي', 'أبيض'], description: '', inStock: true, images: ['images/products/navy-jacket.webp'] },
+    { id: 2, name: 'Retro Track Jacket', price: 1250, category: 'jackets', sizes: ['S', 'M', 'L'], colors: ['أوف وايت', 'أزرق'], description: '', inStock: true, images: ['images/products/track-jacket.webp'] },
+    { id: 3, name: 'Wave Parachute Pants', price: 1650, category: 'pants', sizes: ['M', 'L'], colors: ['أبيض', 'أزرق'], description: '', inStock: false, images: ['images/products/wave-pants.webp'] },
+    { id: 4, name: 'Court Shorts', price: 520, category: 'shorts', sizes: ['M', 'L', 'XL', 'XXL'], colors: ['زيتي'], description: '', inStock: true, images: ['images/products/court-shorts.webp'] },
   ],
   nextId: 5,
   async session() { return false; },

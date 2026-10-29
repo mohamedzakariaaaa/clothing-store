@@ -46,7 +46,7 @@ function lineRow(l) {
       </div>
     </div>
     <p class="line-price price"></p>`;
-  const href = `/product.html?id=${l.product.id}`;
+  const href = `product.html?id=${l.product.id}`;
   row.querySelector('.line-media').href = href;
   row.querySelector('img').src = l.product.images[0] || '';
   row.querySelector('.line-name').href = href;
@@ -132,7 +132,7 @@ function render() {
   if (sentLink) {
     const done = document.createElement('div');
     done.className = 'done';
-    done.innerHTML = '<h2></h2><p></p><a class="btn btn-whatsapp" target="_blank" rel="noopener"></a><a class="btn btn-outline" href="/shop.html"></a>';
+    done.innerHTML = '<h2></h2><p></p><a class="btn btn-whatsapp" target="_blank" rel="noopener"></a><a class="btn btn-outline" href="shop.html"></a>';
     done.querySelector('h2').textContent = t('checkout.doneTitle');
     done.querySelector('p').textContent = t('checkout.doneBody');
     done.querySelector('.btn-whatsapp').href = sentLink;
@@ -143,7 +143,7 @@ function render() {
   if (!cartItems().length) {
     const empty = document.createElement('div');
     empty.className = 'done';
-    empty.innerHTML = '<p></p><a class="btn btn-primary" href="/shop.html"></a>';
+    empty.innerHTML = '<p></p><a class="btn btn-primary" href="shop.html"></a>';
     empty.querySelector('p').textContent = t('cart.empty');
     empty.querySelector('a').textContent = t('cart.continue');
     return root.replaceChildren(empty);
@@ -167,7 +167,7 @@ function render() {
     <p class="free-hint small" hidden></p>
     <p class="summary-row summary-total"><span data-k="cart.total"></span><strong class="price" data-v="total"></strong></p>
     <p class="muted small" data-k="cart.terms"></p>
-    <a class="small policy-link" href="/shipping.html" data-k="cart.policyLink"></a>`;
+    <a class="small policy-link" href="shipping.html" data-k="cart.policyLink"></a>`;
   summary.querySelectorAll('[data-k]').forEach((el) => { el.textContent = t(el.dataset.k); });
   summary.querySelector('[data-v=subtotal]').textContent = price(subtotal);
   summary.querySelector('[data-v=shipping]').textContent = shipping ? price(shipping) : t('cart.free');

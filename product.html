@@ -12,23 +12,23 @@
         if (lang === 'ar') { document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl'; }
       } catch (e) {}
     </script>
-    <link rel="icon" href="/images/favicon.png" type="image/png" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
   </head>
   <body>
     <header class="nav" id="site-header"></header>
 
     <main class="section page">
-      <a href="/shop.html" class="back" data-i18n="product.back">← Back to shop</a>
+      <a href="shop.html" class="back" data-i18n="product.back">← Back to shop</a>
       <div id="product"></div>
     </main>
 
     <!-- "Added to cart" notice -->
     <div class="toast" id="toast" role="status" hidden>
       <span data-i18n="product.added">Added to cart</span>
-      <a href="/cart.html" data-i18n="product.viewCart">View cart</a>
+      <a href="cart.html" data-i18n="product.viewCart">View cart</a>
     </div>
 
     <footer class="footer" id="site-footer"></footer>
-    <script type="module" src="/src/product.js"></script>
+    <script type="module" src="src/product.js"></script>
   </body>
 </html>

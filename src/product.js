@@ -56,7 +56,7 @@ function render() {
       </div>
       <p class="form-error" id="buy-error" role="alert"></p>
       <button class="btn btn-primary btn-block" type="submit"></button>
-      <a class="perks" href="/shipping.html"></a>
+      <a class="perks" href="shipping.html"></a>
       <section class="details" hidden><h2></h2><p></p></section>
     </form>`;
 

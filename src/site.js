@@ -12,12 +12,12 @@ export const price = (amount) => formatPrice(amount, lang());
 export const whatsappLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
 const HEADER = `
-  <a href="/" class="logo"><img src="/images/logo.webp" alt="SeefStore" width="151" height="128" /></a>
+  <a href="./" class="logo"><img src="images/logo.webp" alt="SeefStore" width="151" height="128" /></a>
   <nav>
-    <a href="/shop.html" data-i18n="nav.shop">Shop</a>
-    <a href="/#about" class="nav-extra" data-i18n="nav.about">About</a>
-    <a href="/#contact" class="nav-extra" data-i18n="nav.contact">Contact</a>
-    <a href="/cart.html" class="cart-link" data-i18n-label="nav.cart">
+    <a href="shop.html" data-i18n="nav.shop">Shop</a>
+    <a href="./#about" class="nav-extra" data-i18n="nav.about">About</a>
+    <a href="./#contact" class="nav-extra" data-i18n="nav.contact">Contact</a>
+    <a href="cart.html" class="cart-link" data-i18n-label="nav.cart">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6 7h12l-1 13H7L6 7Zm3 0V6a3 3 0 0 1 6 0v1"/></svg>
       <span class="cart-count" id="cart-count" hidden>0</span>
     </a>
@@ -26,9 +26,9 @@ const HEADER = `
 
 const FOOTER = `
   <p class="footer-links">
-    <a href="/shop.html" data-i18n="nav.shop">Shop</a>
-    <a href="/shipping.html" data-i18n="nav.shipping">Shipping &amp; exchanges</a>
-    <a href="/#contact" data-i18n="nav.contact">Contact</a>
+    <a href="shop.html" data-i18n="nav.shop">Shop</a>
+    <a href="shipping.html" data-i18n="nav.shipping">Shipping &amp; exchanges</a>
+    <a href="./#contact" data-i18n="nav.contact">Contact</a>
   </p>
   <p>© <span id="year"></span> SeefStore. <span data-i18n="footer.rights">All rights reserved.</span></p>`;
 
@@ -77,7 +77,7 @@ export function setLanguage(l) {
 export function productCard(p) {
   const a = document.createElement('a');
   a.className = 'card' + (p.inStock ? '' : ' sold-out');
-  a.href = `/product.html?id=${p.id}`;
+  a.href = `product.html?id=${p.id}`;
   a.innerHTML = `
     <div class="card-media"><img alt="" width="600" height="600" loading="lazy" /></div>
     <div class="card-body"><h3></h3><p class="price"></p></div>`;

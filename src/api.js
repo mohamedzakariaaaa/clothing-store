@@ -2,9 +2,13 @@
 // the full Supabase library is only loaded by the dashboard.
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from './supabase.js';
 
+// The site can live in a sub-folder (GitHub Pages: /clothing-store/), so photos stored as
+// "/images/..." are read as "images/..." — relative to the page. Supabase photo URLs pass through.
+const sitePath = (src) => (src.startsWith('/') ? src.slice(1) : src);
+
 export const toProduct = (r) => ({
   id: r.id, name: r.name, price: r.price, category: r.category, sizes: r.sizes, colors: r.colors,
-  description: r.description, inStock: r.in_stock, images: r.images,
+  description: r.description, inStock: r.in_stock, images: r.images.map(sitePath),
 });
 
 async function get(query) {
